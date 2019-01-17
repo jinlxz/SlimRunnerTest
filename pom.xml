@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.qa.test</groupId>
+  <artifactId>FitNesseRunnerTester</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.fitnesse</groupId>
+  		<artifactId>fitnesse</artifactId>
+  		<version>20180127</version>
+  	</dependency>
+  	        
+        <dependency>
+         <groupId>org.apache.commons</groupId>
+  		<artifactId>commons-text</artifactId>
+  		<version>1.6</version>
+  		</dependency>
+  </dependencies>
+  <build>
+  <plugins>
+ 		 <plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.22.1</version>
+				<executions>
+					<execution>
+						<id>run-fitnesse-tests</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+							<test>FitnesseSlimRunnerTest</test>
+					    	<properties>
+								<property>
+									<name>listener</name>
+									<value>com.qa.fitnesse.JUnitXMLPerPageListener,com.qa.fitnesse.ProgressLoggerListener</value>
+								</property>
+							</properties>
+				
+							<disableXmlReport>true</disableXmlReport>
+						</configuration>	
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-junit47</artifactId>
+						<version>2.22.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+  </plugins></build>
+</project>

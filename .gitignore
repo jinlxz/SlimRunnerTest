@@ -1,0 +1,8 @@
+target
+.classpath
+.project
+.settings
+src/main/resources/**/*.zip
+src/main/resources/FitNesseRoot/files
+src/main/resources/FitNesseRoot/FitNesse/UserGuide
+src/main/resources/FitNesseRoot/FitNesse

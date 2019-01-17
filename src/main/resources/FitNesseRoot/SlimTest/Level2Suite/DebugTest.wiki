@@ -1,0 +1,6 @@
+!3 executing Debug Test
+|import |
+|com.qa.fitnesse.TestFixture|
+
+!|script|com.qa.fitnesse.TestFixture|
+|show| showValue |
